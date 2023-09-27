@@ -5,6 +5,8 @@ Vue.use(Router)
 
 /* Layout */
 import Layout from '@/layout'
+import teacher from '@/api/teacher/teacher'
+import save from '@/views/edu/teacher/save.vue'
 
 /**
  * Note: sub-menu only appear when route children.length >= 1
@@ -73,6 +75,13 @@ export const constantRoutes = [
         name: '添加讲师',
         component: () => import('@/views/edu/teacher/save'),
         meta: { title: '添加讲师', icon: 'tree' }
+      },
+      {
+        path: 'edit/:id',
+        name: '编辑讲师',
+        component: () => import('@/views/edu/teacher/save'),
+        mata: { title: '编辑讲师', noCache: true },
+        hidden: true
       }
     ]
   },
